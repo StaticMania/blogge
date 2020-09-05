@@ -1,0 +1,56 @@
+.featured {
+  padding: 80px 0 100px;
+  &-post {
+    display: flex;
+    align-items: center;
+    &-content {
+      flex: 1;
+      margin-right: 100px;
+    }
+    &-thumb {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 10px 25px 40px rgba($color: #12151a, $alpha: 0.15);
+    }
+    &-author {
+      margin-bottom: 20px;
+      img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50px;
+        margin-bottom: 10px;
+      }
+      p {
+        font-family: $primary-font;
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 36px;
+        margin-bottom: 0;
+        span {
+          color: $primary-color;
+        }
+      }
+    }
+    &-title {
+      font-size: 50px;
+      font-family: $primary-font;
+      font-weight: 700;
+      color: $text-color-dark;
+      line-height: 60px;
+      margin-bottom: 30px;
+      display: block;
+      &:hover {
+        text-decoration: none;
+        color: $text-color-dark;
+      }
+    }
+    &-meta {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      li {
+        font-size: 15px;
+      }
+    }
+  }
+}

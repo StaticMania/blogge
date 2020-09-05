@@ -1,2 +1,3 @@
-# Roxo HTML
-Roxo HMTL Theme Development Structure
+# Blogge HTML
+
+Blogge HMTL Theme Development Structure
