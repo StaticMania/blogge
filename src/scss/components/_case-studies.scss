@@ -1,0 +1,12 @@
+.case-studies {
+  margin-bottom: 110px;
+  overflow: hidden;
+  &-slider {
+    .single-slider {
+      outline: 0;
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}

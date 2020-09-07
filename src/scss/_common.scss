@@ -1,0 +1,22 @@
+.container-fluid {
+  width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.form-control:focus {
+  box-shadow: none;
+  border-color: $border-color;
+}
+
+@keyframes dash-down-animation {
+  0% {
+    transform: translateY(0);
+    transform-origin: top;
+  }
+  100% {
+    transform: translateY(1);
+    transform-origin: top;
+  }
+}
