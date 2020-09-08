@@ -1,12 +1,7 @@
 .footer {
-  margin-bottom: 50px;
   overflow: hidden;
-  .section-title {
-    text-align: center;
-    margin-bottom: 25px;
-    h2 {
-      text-transform: uppercase;
-    }
+  &-logo {
+    margin-bottom: 34px;
   }
   &-nav {
     display: flex;
@@ -55,7 +50,7 @@
           border: 1px solid $border-color;
           transition: all 0.3s ease-in-out;
           &:hover {
-            background-color: $secondary-color;
+            background-color: $black;
             color: $white;
           }
         }

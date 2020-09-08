@@ -1,39 +1,36 @@
 .blog {
-  margin-bottom: 100px;
+  padding: 60px 0 100px;
+  &-section-title {
+    margin-bottom: 45px;
+  }
   &-post {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    // justify-content: space-between;
     margin-bottom: 30px;
-    &-thum {
+    &-thumb {
       width: 40%;
+      border-radius: 5px;
+      overflow: hidden;
       img {
-        max-width: 100%;
+        width: 100%;
+        transition: 0.5s $site-ease;
       }
     }
     &-content {
       width: 55%;
-      a {
-        color: $text-color-dark;
-        font-size: 14px;
-        font-weight: 500;
-        text-transform: capitalize;
-        text-decoration: none;
-        i {
-          padding-left: 10px;
-          display: inline-block;
-        }
-      }
+      margin-left: auto;
     }
     &-title {
       a {
         font-size: 26px;
-        font-weight: 900;
+        font-weight: 700;
         color: $text-color-dark;
         text-decoration: none;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
         display: block;
         transition: all 0.3s ease-in-out;
+        font-family: $primary-font;
       }
     }
     &-tag {
@@ -50,15 +47,39 @@
       }
     }
     &-meta {
-      a {
-        font-size: 13px;
-        color: $text-color;
+      ul {
+        padding: 0;
+        margin: 0 0 18px;
+        display: flex;
+        list-style: none;
+        li {
+          font-size: 13px;
+          &:not(:last-child) {
+            margin-right: 10px;
+          }
+          a {
+            color: $black;
+          }
+        }
+      }
+    }
+    &-action {
+      color: $text-color-dark;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: capitalize;
+      text-decoration: none;
+      i {
+        padding-left: 10px;
+        display: inline-block;
+        line-height: 20px;
+        transition: 0.3s $site-ease;
+      }
+      &:hover {
         text-decoration: none;
-        margin-bottom: 10px;
-        display: block;
-        span {
-          color: $text-color-dark;
-          font-weight: 500;
+        color: $black;
+        i {
+          padding-left: 15px;
         }
       }
     }
@@ -137,8 +158,8 @@
               position: absolute;
               background: $black;
               border-radius: 50px;
-              width: 40px;
-              height: 40px;
+              width: 30px;
+              height: 30px;
               display: flex;
               align-items: center;
               justify-content: center;
@@ -205,8 +226,10 @@
       }
     }
     &:hover {
-      a {
-        color: $secondary-color;
+      .blog-post-thumb {
+        img {
+          transform: scale(0.97);
+        }
       }
     }
   }
@@ -238,14 +261,6 @@
             transform: rotate(90deg);
             bottom: -40px;
             left: -10px;
-            // bottom: calc(-100% - 10px);
-            // transform: translateY(-50%);
-            // animation: dash-down 1s ease 1s infinite both;
-            // animation-name: dash-down-animation;
-            // animation-duration: 1s;
-            // animation-delay: 1s;
-            // animation-iteration-count: infinite;
-            // animation-direction: initial;
           }
         }
         .sociel-icon {
