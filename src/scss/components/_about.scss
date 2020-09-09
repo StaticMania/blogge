@@ -1,10 +1,10 @@
 .about {
-  margin-bottom: 100px;
+  padding: 100px 0;
   &-me {
     text-align: left;
     .actior {
       margin-bottom: 10px;
-      display: block;
+      display: inline-block;
     }
     img {
       max-width: 100%;

@@ -96,45 +96,122 @@
           width: 90%;
           margin-bottom: 0;
         }
-        span {
-          width: 10px;
-          height: 2px;
-          background-color: $text-color;
-          transform: rotate(90deg);
-          display: block;
-          margin: 0 2px;
-        }
-        i {
-          color: $text-color;
-        }
       }
-      .highlight-widget {
-        border-bottom: 1px solid $text-color;
-        .blog-post-thum {
-          width: 100%;
-          margin-bottom: 20px;
-          img {
-            max-width: 100%;
-          }
-        }
-        .blog-post-content {
-          width: 100%;
-          .blog-post-title {
-            a {
-              font-size: 18px;
-              font-weight: 700;
+      .widget-slider {
+        .slider-item {
+          border-bottom: 1px solid $text-color;
+          .slider-thumb {
+            margin-bottom: 20px;
+            img {
+              max-width: 100%;
             }
           }
-          .blog-post-meta {
-            margin-bottom: 50px;
+          .slider-content {
+            padding-bottom: 50px;
+            &-title {
+              a {
+                font-size: 18px;
+                font-weight: 700;
+                text-decoration: none;
+                color: $text-color-dark;
+                margin-bottom: 10px;
+                display: block;
+              }
+            }
+            &-meta {
+              ul {
+                padding: 0;
+                margin: 0;
+                display: flex;
+                list-style: none;
+                li {
+                  font-size: 13px;
+                  &:not(:last-child) {
+                    margin-right: 10px;
+                  }
+                  a {
+                    color: $black;
+                  }
+                }
+              }
+            }
+          }
+          &:hover {
+            a {
+              color: $secondary-color;
+            }
           }
         }
-        &:hover {
-          a {
-            color: $secondary-color;
+        .slick-arrow {
+          transition: 0.3s ease;
+        }
+        .slick-prev {
+          left: 280px;
+          z-index: 1;
+          @include desktop-xl {
+            left: 280px;
           }
+          @include desktop {
+            left: 50%;
+            bottom: 0;
+            transform: translate(-60px, 100px);
+          }
+        }
+        .slick-next {
+          right: -50px;
+          z-index: 1;
+          @include desktop-xl {
+            right: 0;
+          }
+          @include desktop {
+            right: 50%;
+            bottom: 0;
+            transform: translate(60px, 100px);
+          }
+        }
+        .slick-next:before {
+          font-family: unset;
+          position: absolute;
+          content: "";
+          width: 10px;
+          height: 10px;
+          border-width: 1px 1px 0 0;
+          border-color: none;
+          border-style: solid;
+          top: 50%;
+          left: 50%;
+          transform: translate(-75%, -50%) rotate(45deg);
+        }
+        .slick-prev:before {
+          font-family: unset;
+          position: absolute;
+          content: "";
+          width: 10px;
+          height: 10px;
+          border-width: 1px 1px 0 0;
+          border-color: $primary-color;
+          border-style: solid;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(-135deg);
+        }
+
+        .slick-prev,
+        .slick-next {
+          width: 50px;
+          height: 50px;
+          opacity: 1;
+          border: none;
+          top: -60px;
+        }
+
+        .slick-prev:before {
+        }
+        .slick-next:before {
+          color: $primary-color;
         }
       }
+
       .latest-widget-title {
         h2 {
           font-size: 18px;
@@ -149,7 +226,7 @@
 
         &-thum {
           position: relative;
-          width: 35%;
+          width: 30%;
           img {
             max-width: 100%;
           }
@@ -169,7 +246,7 @@
           }
         }
         &-content {
-          width: 60%;
+          width: 65%;
           .content-title {
             a {
               font-size: 17px;
@@ -181,10 +258,20 @@
             }
           }
           .content-meta {
-            a {
-              font-size: 13px;
-              color: $text-color;
-              text-decoration: none;
+            ul {
+              padding: 0;
+              margin: 0;
+              display: flex;
+              list-style: none;
+              li {
+                font-size: 10px;
+                &:not(:last-child) {
+                  margin-right: 10px;
+                }
+                a {
+                  color: $black;
+                }
+              }
             }
           }
         }
@@ -236,136 +323,103 @@
   // start-blog-details
 
   &-single {
-    margin-bottom: 50px;
-
-    .single-blog {
-      position: relative;
-      .share-now {
-        position: absolute;
-        left: -20%;
-        top: 4%;
-        a.scrol {
-          position: relative;
-          color: $black;
-          font-size: 14px;
-          text-decoration: none;
-          text-transform: uppercase;
-          margin-bottom: 90px;
-          display: block;
-          &::before {
-            position: absolute;
-            content: "";
-            width: 70px;
-            height: 1px;
-            background: $black;
-            transform: rotate(90deg);
-            bottom: -40px;
-            left: -10px;
-          }
+    padding: 100px 0 50px;
+    .share-now {
+      position: sticky;
+      top: 4%;
+      a.scrol {
+        position: relative;
+        color: $black;
+        font-size: 14px;
+        text-decoration: none;
+        text-transform: uppercase;
+        margin-bottom: 90px;
+        display: inline-block;
+        &::before {
+          position: absolute;
+          content: "";
+          width: 70px;
+          height: 1px;
+          background: $black;
+          transform: rotate(90deg);
+          bottom: -40px;
+          left: -10px;
         }
-        .sociel-icon {
-          ul {
-            padding: 0;
-            li {
-              list-style: none;
-              display: block;
-              a {
-                font-size: 20px;
-                width: 50px;
-                height: 50px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border: 1px solid $border-color;
-                border-radius: 50px;
-                text-decoration: none;
-                color: $text-color-dark;
-                margin-bottom: 10px;
-                transition: all 0.3s ease-in-out;
-                &:hover {
-                  background-color: $secondary-color;
-                  color: $white;
-                }
+      }
+      .sociel-icon {
+        ul {
+          padding: 0;
+          li {
+            list-style: none;
+            display: block;
+            a {
+              font-size: 20px;
+              width: 50px;
+              height: 50px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 1px solid $border-color;
+              border-radius: 50px;
+              text-decoration: none;
+              color: $text-color-dark;
+              margin-bottom: 10px;
+              transition: all 0.3s ease-in-out;
+              &:hover {
+                background-color: $secondary-color;
+                color: $white;
               }
             }
           }
         }
       }
-      &-content {
-        padding: 50px 150px 80px 50px;
-        .tag {
-          a {
-            background-color: $black;
-            padding: 4px 20px;
-            display: inline-block;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 12px;
-            color: $white;
-            font-weight: 600;
-            margin-bottom: 20px;
-          }
-        }
-        .title {
-          a {
-            font-size: 40px;
-            font-weight: 700;
-            color: $text-color-dark;
-            text-decoration: none;
-            margin-bottom: 10px;
-            display: block;
-          }
-        }
-        .meta {
-          a {
-            font-size: 13px;
-            color: $text-color;
-            text-decoration: none;
-            margin-bottom: 10px;
-            display: block;
-            span {
-              color: $text-color-dark;
-              font-weight: 500;
-              padding-right: 10px;
-            }
-          }
-        }
+    }
+    .single-blog {
+      position: relative;
+      .tag {
+        background-color: $black;
+        padding: 4px 20px;
+        display: inline-block;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 12px;
+        color: $white;
+        font-weight: 600;
+        margin: 0 0 20px 50px;
       }
-      &-banner {
-        position: relative;
-        img {
-          max-width: 100%;
-          z-index: 99;
-          box-shadow: 10px 25px 40px 0px rgba(18, 21, 26, 0.07);
-        }
-        .blog-shape-right-top {
-          position: absolute;
-          top: -50px;
-          right: 14px;
-          z-index: -1;
-          img {
-            box-shadow: none;
+      .title {
+        font-size: 40px;
+        font-weight: 700;
+        color: $text-color-dark;
+        text-decoration: none;
+        padding: 0 150px 10px 50px;
+        display: block;
+      }
+
+      .meta {
+        margin: 0;
+        padding: 0 0 50px 50px;
+        display: flex;
+        list-style: none;
+        li {
+          font-size: 10px;
+          &:not(:last-child) {
+            margin-right: 10px;
           }
-        }
-        .blog-shape-left-bottom {
-          position: absolute;
-          bottom: -40px;
-          left: -70px;
-          z-index: -1;
-          img {
-            box-shadow: none;
+          a {
+            color: $black;
           }
         }
       }
       img {
         max-width: 100%;
-        margin-bottom: 40px;
+        box-shadow: 10px 25px 40px 0px rgba(18, 21, 26, 0.07);
+        margin-bottom: 50px;
       }
       p {
         font-size: 14px;
         font-weight: 500;
-        margin-bottom: 100px;
-        padding: 0 70px;
+        padding: 0 70px 100px 50px;
       }
       h3 {
         font-size: 26px;
@@ -414,49 +468,49 @@
       &-two,
       &-three {
         margin-bottom: 50px;
+        padding: 20px 30px 30px;
         width: 50%;
         float: left;
         text-align: right;
         border-top: 1px solid $border-color;
         border-bottom: 1px solid $border-color;
         border-left: 1px solid $border-color;
-        .content {
-          padding: 40px;
-          .tag {
-            a {
-              background-color: $black;
-              padding: 4px 20px;
-              display: inline-block;
-              border-radius: 50px;
-              text-decoration: none;
-              font-size: 12px;
-              color: $white;
-              font-weight: 600;
-              margin-bottom: 20px;
+
+        .tag {
+          background-color: $black;
+          padding: 4px 20px;
+          display: inline-block;
+          border-radius: 50px;
+          text-decoration: none;
+          font-size: 12px;
+          color: $white;
+          font-weight: 600;
+          margin-bottom: 20px;
+          margin-left: 0;
+        }
+
+        .title {
+          font-size: 20px;
+          font-weight: 700;
+          color: $text-color-dark;
+          text-decoration: none;
+          margin-bottom: 10px;
+          display: block;
+          padding: 0;
+        }
+        .meta {
+          margin: 0;
+          padding: 0;
+          display: flex;
+          list-style: none;
+          float: right;
+          li {
+            font-size: 10px;
+            &:not(:last-child) {
+              margin-right: 10px;
             }
-          }
-          .title {
             a {
-              font-size: 20px;
-              font-weight: 700;
-              color: $text-color-dark;
-              text-decoration: none;
-              margin-bottom: 10px;
-              display: block;
-            }
-          }
-          .meta {
-            a {
-              font-size: 13px;
-              color: $text-color;
-              text-decoration: none;
-              margin-bottom: 10px;
-              display: block;
-              span {
-                color: $text-color-dark;
-                font-weight: 500;
-                padding-right: 10px;
-              }
+              color: $black;
             }
           }
         }
@@ -464,12 +518,12 @@
       &-three {
         text-align: left;
         border-right: 1px solid $border-color;
-        .content {
-          .tag {
-            a {
-              background-color: $text-color;
-            }
-          }
+
+        .tag {
+          background-color: $text-color;
+        }
+        .meta {
+          float: left;
         }
       }
     }

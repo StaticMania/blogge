@@ -3,13 +3,13 @@ $(document).ready(function () {
 
 });
 
-$(".case-studies-slider").slick({
+$(".widget-slider").slick({
   dots: false,
   infinite: true,
   speed: 300,
-  slidesToShow: 6,
+  slidesToShow: 1,
   slidesToScroll: 1,
-  arrows: false,
+  arrows: true,
   autoplay: true,
   responsive: [
     {
