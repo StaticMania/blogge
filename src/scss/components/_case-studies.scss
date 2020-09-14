@@ -1,6 +1,9 @@
 .case-studies {
-  margin-bottom: 110px;
+  padding-bottom: 110px;
   overflow: hidden;
+  @include tablet {
+    padding-bottom: 50px;
+  }
   &-item {
     display: flex;
     align-items: center;

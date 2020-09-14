@@ -1,6 +1,12 @@
 .contact {
   padding: 100px 0;
+  @include tablet {
+    padding-top: 50px;
+  }
   &-information {
+    @include tablet {
+      text-align: center;
+    }
     h2 {
       margin-bottom: 20px;
       font-weight: 500;
@@ -41,6 +47,10 @@
     }
   }
   &-form {
+    @include tablet {
+      text-align: center;
+      padding-bottom: 50px;
+    }
     h2 {
       font-size: 30px;
     }
@@ -57,5 +67,8 @@
   #map {
     height: 100%;
     border-radius: 20px;
+    img {
+      width: 100%;
+    }
   }
 }

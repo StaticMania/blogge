@@ -1,7 +1,13 @@
 .about {
   padding: 100px 0;
+  @include tablet {
+    padding-top: 50px;
+  }
   &-me {
     text-align: left;
+    @include tablet {
+      text-align: center;
+    }
     .actior {
       margin-bottom: 10px;
       display: inline-block;
@@ -16,6 +22,9 @@
     }
     p {
       margin-bottom: 50px;
+      @include mobile {
+        text-align: justify;
+      }
     }
     .banner {
       margin-bottom: 80px;
