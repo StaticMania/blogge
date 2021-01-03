@@ -114,36 +114,6 @@
       }
     }
   }
-
-  &.nav-bg {
-    background: $white;
-    padding: 15px;
-    border: none;
-    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.09);
-    top: 0;
-    @include desktop {
-      padding: 20px 30px;
-    }
-    @include mobile {
-      padding: 15px 20px;
-    }
-    .navbar-brand {
-      .logo-main {
-        display: block;
-      }
-
-      .logo-white {
-        display: none;
-      }
-    }
-
-    .nav-link {
-      color: $text-color-dark !important;
-      &::before {
-        background: darken($color: $white, $amount: 10) !important;
-      }
-    }
-  }
 }
 
 .headroom {
