@@ -24,6 +24,7 @@
       margin-bottom: 50px;
       @include mobile {
         text-align: justify;
+        padding: 0 20px;
       }
     }
     .banner {
@@ -34,6 +35,9 @@
         top: -50px;
         right: -40px;
         z-index: -1;
+        @include desktop {
+          right: -10px;
+        }
         img {
           box-shadow: none;
         }
@@ -43,6 +47,9 @@
         bottom: -40px;
         left: -70px;
         z-index: -1;
+        @include desktop {
+          left: -10px;
+        }
         img {
           box-shadow: none;
         }

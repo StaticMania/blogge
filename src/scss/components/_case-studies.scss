@@ -1,37 +1,54 @@
-.case-studies {
-  padding-bottom: 110px;
+.instagram {
   overflow: hidden;
-  @include tablet {
-    padding-bottom: 50px;
+  position: relative;
+
+  a {
+    color: #fff;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease-in-out;
+    opacity: 1;
   }
+
   &-item {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     &-thum {
-      &:not(:last-child) {
-        padding-right: 2px;
-      }
+      // &:not(:last-child) {
+      //   padding-right: 2px;
+      // }
       img {
         max-width: 100%;
       }
     }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #080808b3;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &:hover {
     &::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: #080808b3;
-      opacity: 0;
-      transition: all 0.3s ease-in-out;
+      opacity: 1;
+      z-index: 99;
     }
-    &:hover {
-      .case-studies-item {
-        &::before {
-          opacity: 1;
-        }
-      }
+    a {
+      opacity: 1;
+      z-index: 999;
     }
   }
 }

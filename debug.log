@@ -7,3 +7,4 @@
 [0910/223053.205:ERROR:exception_snapshot_win.cc(98)] thread ID 9980 not found in process
 [0913/000329.948:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
 [0913/000329.956:ERROR:exception_snapshot_win.cc(98)] thread ID 14224 not found in process
+[0103/123904.037:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)

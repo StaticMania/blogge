@@ -64,6 +64,7 @@
       display: block;
       @include desktop-lg {
         font-size: 35px;
+        line-height: 50px;
       }
       @include desktop {
         font-size: 30px;
