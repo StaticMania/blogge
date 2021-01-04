@@ -17,6 +17,9 @@
     transition: all 0.5s ease-in-out;
     opacity: 0;
     z-index: 99;
+    i {
+      padding-right: 10px;
+    }
   }
 
   &-item {
