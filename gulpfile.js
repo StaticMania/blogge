@@ -214,12 +214,12 @@ gulp.task("build", function () {
 
 gulp.task("build-prod", function () {
   runSequence(
-    "clean",
+    // "clean",
     "html:build",
     "js:build",
     "scss:build",
     "images:build",
-    "plugins:build",
+    // "plugins:build",
     "fonts:build",
     "others:build",
     "zip"
