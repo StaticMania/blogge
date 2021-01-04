@@ -413,6 +413,12 @@
         @include desktop {
           margin-bottom: 0;
         }
+        @include tablet {
+          margin-left: -20px;
+        }
+        @include mobile {
+          margin-left: 0px;
+        }
         &::before {
           position: absolute;
           content: "";
@@ -427,11 +433,20 @@
             bottom: 11px;
             left: 52px;
           }
+          @include tablet {
+            width: 40px;
+          }
+          @include mobile {
+            display: none;
+          }
         }
       }
       .sociel-icon {
         @include desktop {
           margin-left: -100px;
+        }
+        @include tablet {
+          margin-left: 0px;
         }
         ul {
           padding: 0;
@@ -442,6 +457,9 @@
             @include desktop {
               display: inline-block;
               margin-right: 15px;
+            }
+            @include desktop {
+              margin-right: 5px;
             }
             a {
               font-size: 20px;
@@ -468,6 +486,9 @@
     .single-blog {
       position: relative;
       padding: 0 80px 60px;
+      @include tablet {
+        padding: 0;
+      }
       .tag {
         background-color: $black;
         padding: 5px 20px;
@@ -488,6 +509,10 @@
         line-height: 60px;
         @include desktop {
           font-size: 35px;
+        }
+        @include mobile {
+          font-size: 30px;
+          line-height: 45px;
         }
       }
 
@@ -510,6 +535,9 @@
         width: 100%;
         box-shadow: 10px 25px 40px 0px rgba(18, 21, 26, 0.07);
         margin: 0 -80px 50px;
+        @include tablet {
+          margin: 0 0 40px 0;
+        }
       }
       p {
         font-size: 14px;
@@ -525,6 +553,12 @@
         padding: 45px 100px 40px 50px;
         margin-bottom: 70px;
         position: relative;
+        @include desktop {
+          padding: 45px;
+        }
+        @include mobile {
+          padding: 20px 0px 20px 20px;
+        }
         &::before {
           content: "";
           position: absolute;
@@ -542,18 +576,24 @@
           margin-bottom: 0;
           padding: 0;
           letter-spacing: 1px;
+          @include mobile {
+            font-size: 16px;
+          }
         }
       }
       .banner {
         display: flex;
-        align-items: center;
         justify-content: center;
         margin-bottom: 50px;
+        overflow: hidden;
         img {
           max-width: 100%;
           margin: 0;
           &:nth-child(1) {
             padding-right: 50px;
+            @include tablet {
+              padding-right: 10px;
+            }
           }
         }
       }
@@ -571,10 +611,16 @@
         li {
           list-style: none;
           padding: 40px 0px 40px 40px;
+          @include mobile {
+            padding: 40px 0px 40px 15px;
+          }
           &:nth-child(1) {
             text-align: right;
             border-right: 1px solid $border-color;
             padding: 40px 40px 40px 0;
+            @include mobile {
+              padding: 40px 15px 40px 0;
+            }
           }
           .tag {
             padding: 10px 30px;
@@ -598,6 +644,9 @@
             display: block;
             @include desktop {
               font-size: 18px;
+            }
+            @include tablet {
+              font-size: 16px;
             }
           }
           &:hover {
