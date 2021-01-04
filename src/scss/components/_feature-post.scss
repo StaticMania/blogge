@@ -1,7 +1,10 @@
 .featured {
   padding: 80px 0 100px;
   @include desktop {
-    padding-bottom: 0;
+    padding: 50px 0 0px;
+  }
+  @include mobile {
+    padding: 20px 0 0px;
   }
   &-post {
     display: flex;
@@ -19,6 +22,9 @@
       @include desktop {
         margin-right: 0px;
         margin-bottom: 50px;
+      }
+      @include mobile {
+        margin-bottom: 30px;
       }
     }
     &-thumb {

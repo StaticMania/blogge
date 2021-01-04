@@ -20,6 +20,7 @@
   }
 
   .navbar-nav {
+    margin-bottom: 1rem;
     .nav-item {
       .nav-link {
         color: $text-color-dark;
@@ -95,15 +96,15 @@
 
   &-social {
     list-style: none;
-    padding: 0;
-    margin: 0 0 0 60px;
+    padding: 0 0 0 60px;
+
     @include desktop {
-      margin: 0;
+      padding: 0;
     }
     li {
       display: inline-block;
       a {
-        color: $primary-color;
+        color: $text-color;
         font-size: 16px;
         padding: 7px 10px;
       }

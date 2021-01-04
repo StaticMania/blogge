@@ -3,10 +3,16 @@
   @include tablet {
     padding-bottom: 50px;
   }
+  @include mobile {
+    padding-top: 30px;
+  }
   &-section-title {
     margin-bottom: 45px;
     @include desktop {
       text-align: center;
+    }
+    @include mobile {
+      margin-bottom: 30px;
     }
     h2 {
       @include mobile {
@@ -393,6 +399,12 @@
     @include desktop {
       padding-top: 50px;
     }
+    @include mobile {
+      padding-top: 0px;
+    }
+    @include mobile-xs {
+      padding-bottom: 30px;
+    }
     .share-now {
       position: sticky;
       top: 4%;
@@ -418,6 +430,10 @@
         }
         @include mobile {
           margin-left: 0px;
+        }
+        @include mobile-xs {
+          margin-left: -5px;
+          margin-bottom: 5px;
         }
         &::before {
           position: absolute;
@@ -448,6 +464,7 @@
         @include tablet {
           margin-left: 0px;
         }
+
         ul {
           padding: 0;
           margin: 0;
@@ -471,9 +488,14 @@
               border: 1px solid $border-color;
               border-radius: 50px;
               text-decoration: none;
-              color: $text-color-dark;
+              color: $text-color;
               margin-bottom: 10px;
               transition: all 0.3s ease-in-out;
+              @include mobile-xs {
+                font-size: 16px;
+                width: 40px;
+                height: 40px;
+              }
               &:hover {
                 background-color: $secondary-color;
                 color: $white;
@@ -514,6 +536,10 @@
           font-size: 30px;
           line-height: 45px;
         }
+        @include mobile-xs {
+          font-size: 24px;
+          line-height: 35px;
+        }
       }
 
       .meta {
@@ -521,6 +547,9 @@
         padding: 0 0 60px 0;
         display: flex;
         list-style: none;
+        @include mobile {
+          padding-bottom: 30px;
+        }
         li {
           font-size: 14px;
           &:not(:last-child) {
@@ -532,11 +561,14 @@
         }
       }
       img {
-        width: 100%;
         box-shadow: 10px 25px 40px 0px rgba(18, 21, 26, 0.07);
-        margin: 0 -80px 50px;
+        margin: 0 -60px 50px;
         @include tablet {
           margin: 0 0 40px 0;
+          width: 100%;
+        }
+        @include mobile {
+          margin-bottom: 30px;
         }
       }
       p {
@@ -547,6 +579,12 @@
         font-size: 26px;
         font-weight: 600;
         margin-bottom: 25px;
+        @include mobile {
+          margin-bottom: 15px;
+        }
+        @include mobile {
+          font-size: 20px;
+        }
       }
       blockquote {
         background-color: #f6f6f6;
@@ -555,9 +593,14 @@
         position: relative;
         @include desktop {
           padding: 45px;
+          margin-bottom: 50px;
+        }
+        @include tablet {
+          margin-bottom: 30px;
         }
         @include mobile {
           padding: 20px 0px 20px 20px;
+          margin-bottom: 15px;
         }
         &::before {
           content: "";
@@ -568,6 +611,9 @@
           top: 50%;
           left: -3%;
           transform: translate(0%, -50%) rotate(90deg);
+          @include mobile {
+            display: none;
+          }
         }
         p {
           color: $text-color-dark;
@@ -581,19 +627,29 @@
           }
         }
       }
-      .banner {
+      &-banner {
         display: flex;
         justify-content: center;
         margin-bottom: 50px;
         overflow: hidden;
-        img {
-          max-width: 100%;
-          margin: 0;
+        @include tablet {
+          display: block;
+          margin-bottom: 30px;
+        }
+        @include mobile {
+          margin-bottom: 15px;
+        }
+        .banner {
           &:nth-child(1) {
             padding-right: 50px;
             @include tablet {
-              padding-right: 10px;
+              padding-bottom: 20px;
+              padding-right: 0;
             }
+          }
+          img {
+            max-width: 100%;
+            margin: 0;
           }
         }
       }
@@ -603,23 +659,44 @@
       display: flex;
       border-top: 1px solid $border-color;
       border-bottom: 1px solid $border-color;
+      @include tablet {
+        border: 0;
+        margin-bottom: 0;
+      }
       ul {
         padding: 0;
         margin: 0;
         display: flex;
+        @include tablet {
+          display: block;
+        }
 
         li {
           list-style: none;
           padding: 40px 0px 40px 40px;
-          @include mobile {
-            padding: 40px 0px 40px 15px;
+          @include tablet {
+            text-align: center;
+            padding: 40px 80px;
           }
+          @include mobile-xs {
+            text-align: center;
+            padding: 20px;
+          }
+
           &:nth-child(1) {
             text-align: right;
             border-right: 1px solid $border-color;
             padding: 40px 40px 40px 0;
+            @include tablet {
+              text-align: center;
+              border-right: 0;
+              padding: 40px 80px;
+            }
             @include mobile {
-              padding: 40px 15px 40px 0;
+              padding: 0px 80px;
+            }
+            @include mobile-xs {
+              padding: 20px;
             }
           }
           .tag {

@@ -1,7 +1,7 @@
 .about {
   padding: 100px 0;
-  @include tablet {
-    padding-top: 50px;
+  @include desktop {
+    padding: 50px;
   }
   &-me {
     text-align: left;
@@ -75,7 +75,7 @@
           border: 1px solid $border-color;
           border-radius: 50px;
           text-decoration: none;
-          color: $text-color-dark;
+          color: $text-color;
           margin-right: 10px;
           transition: all 0.3s ease-in-out;
           &:hover {
