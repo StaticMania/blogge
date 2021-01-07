@@ -103,10 +103,25 @@
     }
     li {
       display: inline-block;
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0;
+      }
       a {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $border-color;
+        border-radius: 50px;
+        text-decoration: none;
         color: $text-color;
         font-size: 16px;
-        padding: 7px 10px;
+        &:hover {
+          background-color: $black;
+          color: $white;
+        }
       }
       &:last-child {
         a {

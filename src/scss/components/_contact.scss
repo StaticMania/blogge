@@ -33,6 +33,9 @@
         p {
           margin-bottom: 0;
           color: $text-color-dark;
+          @include mobile {
+            font-size: 13px;
+          }
           @include mobile-xs {
             font-size: 11px;
           }

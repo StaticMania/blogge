@@ -3,8 +3,8 @@
   @include desktop {
     padding: 50px 0 0px;
   }
-  @include mobile {
-    padding: 20px 0 0px;
+  @include tablet {
+    padding: 0px 0 0px;
   }
   &-post {
     display: flex;

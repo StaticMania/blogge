@@ -47,6 +47,14 @@
         width: 100%;
         text-align: center;
       }
+      p {
+        @include tablet {
+          display: none;
+        }
+        @include mobile {
+          display: block;
+        }
+      }
     }
     &-title {
       a {
@@ -151,156 +159,14 @@
     }
     &-widget {
       position: relative;
-      &-title {
-        display: flex;
-        align-items: center;
-        margin-bottom: 30px;
-        @include desktop {
-          text-align: center;
-        }
-
-        h2 {
-          font-size: 22px;
-          font-weight: 700;
-          text-transform: uppercase;
-          width: 90%;
-          margin-bottom: 0;
-        }
-      }
-      .widget-slider {
-        .slider-item {
-          border-bottom: 1px solid $text-color;
-          padding-bottom: 80px;
-          outline: 0;
-          @include desktop-lg {
-            padding-bottom: 50px;
-          }
-          .slider-thumb {
-            margin-bottom: 20px;
-            img {
-              width: 100%;
-              transition: 0.5s $site-ease;
-            }
-          }
-          .slider-content {
-            @include desktop {
-              text-align: center;
-            }
-            &-title {
-              a {
-                font-size: 18px;
-                font-weight: 700;
-                text-decoration: none;
-                color: $text-color-dark;
-                margin-bottom: 10px;
-                display: block;
-              }
-            }
-            &-meta {
-              ul {
-                padding: 0;
-                margin: 0;
-                display: flex;
-                list-style: none;
-                @include desktop {
-                  justify-content: center;
-                  li {
-                    font-size: 14px;
-                  }
-                  a {
-                    color: $black;
-                  }
-                }
-              }
-            }
-          }
-          &:hover {
-            .slider-thumb {
-              img {
-                transform: scale(0.97);
-              }
-            }
-          }
-        }
-        .slick-arrow {
-          transition: 0.3s ease;
-        }
-        .slick-prev {
-          left: 280px;
-          z-index: 1;
-          @include desktop-xl {
-            left: 75%;
-          }
-          @include desktop {
-            left: 90%;
-          }
-          @include tablet {
-            left: 87%;
-          }
-          @include mobile {
-            left: 80%;
-          }
-        }
-        .slick-next {
-          right: 0px;
-          z-index: 1;
-          @include desktop-xl {
-          }
-        }
-        .slick-next:before {
-          font-family: unset;
-          position: absolute;
-          content: "";
-          width: 8px;
-          height: 8px;
-          border-width: 1px 1px 0 0;
-          border-color: none;
-          border-style: solid;
-          top: 50%;
-          left: 50%;
-          transform: translate(-75%, -50%) rotate(45deg);
-        }
-        .slick-prev:before {
-          font-family: unset;
-          position: absolute;
-          content: "";
-          width: 8px;
-          height: 8px;
-          border-width: 1px 1px 0 0;
-          border-color: $primary-color;
-          border-style: solid;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%) rotate(-135deg);
-        }
-
-        .slick-prev,
-        .slick-next {
-          position: absolute;
-          width: 50px;
-          height: 50px;
-          opacity: 1;
-          border: none;
-          top: -60px;
-          // @include desktop {
-          //   top: -60px;
-          // }
-        }
-
-        .slick-prev:before {
-        }
-        .slick-next:before {
-          color: $primary-color;
-        }
-      }
-
       .latest-widget-title {
         h2 {
-          font-size: 18px;
+          font-size: 28px;
+          margin-bottom: 10px;
           font-weight: 700;
           text-transform: uppercase;
           @include desktop {
-            text-align: center;
+            text-align: left;
           }
         }
       }
@@ -497,7 +363,7 @@
                 height: 40px;
               }
               &:hover {
-                background-color: $secondary-color;
+                background-color: $black;
                 color: $white;
               }
             }
@@ -663,6 +529,9 @@
       @include tablet {
         border: 0;
         margin-bottom: 0;
+      }
+      @include mobile {
+        display: none;
       }
       ul {
         padding: 0;

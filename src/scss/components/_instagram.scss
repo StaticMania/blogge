@@ -17,7 +17,7 @@
     transition: all 0.5s ease-in-out;
     opacity: 0;
     z-index: 99;
-    @include mobile {
+    @include desktop {
       opacity: 1;
     }
     i {
@@ -65,7 +65,7 @@
     opacity: 0;
     transition: all 0.5s ease-in-out;
     z-index: 99;
-    @include mobile {
+    @include desktop {
       opacity: 1;
     }
   }

@@ -6,8 +6,9 @@
   margin-left: auto;
 }
 .form-control:focus {
+  border-color: $black;
+  outline: none;
   box-shadow: none;
-  border-color: $border-color;
 }
 
 @keyframes dash-down-animation {
