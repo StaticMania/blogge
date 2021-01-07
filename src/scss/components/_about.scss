@@ -3,6 +3,9 @@
   @include desktop {
     padding: 50px;
   }
+  @include tablet {
+    padding: 0px;
+  }
   &-me {
     text-align: left;
     @include tablet {
