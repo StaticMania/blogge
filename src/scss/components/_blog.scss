@@ -131,7 +131,10 @@
       .nav-bg {
         ul.pagination {
           padding: 0;
-          margin: 0;
+          margin: 50px 0 0;
+          @include tablet{
+            justify-content: center;
+          }
           li.page-item {
             a.page-link {
               width: 50px;
@@ -375,7 +378,7 @@
       position: relative;
       padding: 0 80px 60px;
       @include tablet {
-        padding: 0;
+        padding: 0 0 60px;
       }
       .tag {
         background-color: $black;
@@ -429,7 +432,7 @@
       img {
         box-shadow: 10px 25px 40px 0px rgba(18, 21, 26, 0.07);
         margin: 0 -60px 50px;
-        @include tablet {
+        @include desktop-lg {
           margin: 0 0 40px 0;
           width: 100%;
         }
@@ -465,7 +468,7 @@
           margin-bottom: 30px;
         }
         @include mobile {
-          padding: 20px 0px 20px 20px;
+          padding: 20px 10px 20px 20px;
           margin-bottom: 15px;
         }
         &::before {
@@ -526,48 +529,25 @@
       display: flex;
       border-top: 1px solid $border-color;
       border-bottom: 1px solid $border-color;
-      @include tablet {
-        border: 0;
-        margin-bottom: 0;
-      }
-      @include mobile {
-        display: none;
-      }
+
       ul {
         padding: 0;
         margin: 0;
         display: flex;
-        @include tablet {
-          display: block;
-        }
-
         li {
           list-style: none;
           padding: 40px 0px 40px 40px;
           @include tablet {
-            text-align: center;
-            padding: 40px 80px;
+            padding: 20px 20px;
           }
-          @include mobile-xs {
-            text-align: center;
-            padding: 20px;
-          }
-
           &:nth-child(1) {
             text-align: right;
             border-right: 1px solid $border-color;
             padding: 40px 40px 40px 0;
             @include tablet {
-              text-align: center;
-              border-right: 0;
-              padding: 40px 80px;
+              padding: 20px 20px;
             }
-            @include mobile {
-              padding: 0px 80px;
-            }
-            @include mobile-xs {
-              padding: 20px;
-            }
+
           }
           .tag {
             padding: 10px 30px;

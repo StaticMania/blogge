@@ -132,17 +132,17 @@ gulp.task("zip", function () {
     .pipe(gulp.dest("dist/development"));
 });
 
-// Plugins
-// gulp.task("plugins:build", function () {
-//   return gulp
-//     .src(path.src.plugins)
-//     .pipe(gulp.dest(path.build.dir + "plugins/"))
-//     .pipe(
-//       bs.reload({
-//         stream: true,
-//       })
-//     );
-// });
+//Plugins
+gulp.task("plugins:build", function () {
+  return gulp
+    .src(path.src.plugins)
+    .pipe(gulp.dest(path.build.dir + "plugins/"))
+    .pipe(
+      bs.reload({
+        stream: true,
+      })
+    );
+});
 
 // Fonts
 gulp.task("fonts:build", function () {
@@ -197,7 +197,7 @@ gulp.task("build", function () {
     "js:build",
     "scss:build",
     "images:build",
-    // "plugins:build",
+    "plugins:build",
     "fonts:build",
     "others:build",
     "watch:build",
@@ -219,7 +219,7 @@ gulp.task("build-prod", function () {
     "js:build",
     "scss:build",
     "images:build",
-    // "plugins:build",
+    "plugins:build",
     "fonts:build",
     "others:build",
     "zip"
