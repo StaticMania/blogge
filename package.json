@@ -1,34 +1,28 @@
 {
-  "name": "kausar-starter-kit",
-  "version": "1.0.0",
+  "name": "staticmania-development-kit",
+  "version": "1.0.1",
   "description": "Gulp environment for creating Website",
   "keywords": [
     "gulp",
     "frontend"
   ],
-  "author": "Md. Kausar Ahmed",
+  "author": "StaticMania",
   "license": "MIT",
   "scripts": {
-    "start": "gulp"
+    "build": "gulp",
+    "dev": "gulp dev"
   },
   "devDependencies": {
-    "browser-sync": "^2.24.5",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-file-include": "^2.0.1",
-    "gulp-gm": "0.0.9",
-    "gulp-js-import": "^1.0.6",
-    "gulp-jshint": "^2.1.0",
-    "gulp-notify": "^3.2.0",
-    "gulp-plumber": "^1.2.0",
-    "gulp-rimraf": "^0.2.2",
-    "gulp-sass": "^4.0.1",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-uglify": "^3.0.0",
+    "browser-sync": "^2.27.5",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-file-include": "^2.3.0",
+    "gulp-notify": "^4.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rimraf": "^1.0.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-util": "^3.0.8",
-    "gulp-zip": "^4.1.0",
-    "jshint": "^2.9.5",
-    "jshint-stylish": "^2.2.1",
-    "run-sequence": "^2.2.1"
+    "sass": "^1.41.0"
   }
 }
