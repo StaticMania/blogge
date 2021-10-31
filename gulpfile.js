@@ -1,17 +1,17 @@
-"use strict";
-
-var { src, dest, watch, series, parallel } = require("gulp");
-var sass = require("gulp-sass")(require("sass"));
-var sourcemaps = require("gulp-sourcemaps");
-var plumber = require("gulp-plumber");
-var notify = require("gulp-notify");
-var fileinclude = require("gulp-file-include");
-var autoprefixer = require("gulp-autoprefixer");
-var bs = require("browser-sync").create();
-var rimraf = require("rimraf");
+const { src, dest, watch, series, parallel } = require("gulp");
+const sass = require("gulp-sass")(require("sass"));
+const sourcemaps = require("gulp-sourcemaps");
+const plumber = require("gulp-plumber");
+const notify = require("gulp-notify");
+const fileinclude = require("gulp-file-include");
+const autoprefixer = require("gulp-autoprefixer");
+const bs = require("browser-sync").create();
+const rimraf = require("rimraf");
+const uglify = require("gulp-uglify");
+const uglifycss = require("gulp-uglifycss");
 
 // Paths
-var path = {
+const path = {
   src: {
     html: "src/*.html",
     others: "src/*.+(php|ico|png)",
@@ -77,10 +77,25 @@ const scss = () =>
       })
     );
 
+const scssDev = () =>
+  src(path.src.scss)
+    .pipe(customPlumber("Error Running Sass"))
+    .pipe(sourcemaps.init())
+    .pipe(sass({ outputStyle: "expanded" }).on("error", sass.logError))
+    .pipe(uglifycss({ maxLineLen: 80, uglyComments: true }))
+    .pipe(autoprefixer())
+    .pipe(sourcemaps.write("/maps"))
+    .pipe(dest(path.build.dir + "css/"))
+    .pipe(
+      bs.reload({
+        stream: true,
+      })
+    );
 // Javascript task: generate theme script files
 const js = () =>
   src(path.src.js)
     .pipe(customPlumber("Error Running JS"))
+    .pipe(uglify())
     .pipe(dest(path.build.dir + "js/"))
     .pipe(
       bs.reload({
@@ -139,7 +154,7 @@ const watchTask = () => {
 exports.default = series(
   clean,
   html,
-  parallel(scss, js),
+  parallel(scssDev, js),
   parallel(images, vendor, fonts, others)
 );
 
